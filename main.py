@@ -16,8 +16,6 @@ import uvicorn
 # 尝试导入 Daytona（如果未安装则给出友好提示）
 from daytona import CreateSandboxBaseParams, Daytona, FileUpload
 from deepagents import create_deep_agent
-
-_fs_module.DEFAULT_READ_LIMIT = 500
 from deepagents.backends import FilesystemBackend
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
@@ -33,6 +31,8 @@ from watchdog.observers import Observer
 
 from src.output_sanitize_config import load_output_sanitize_config
 from src.prompt_config import PromptConfig
+
+_fs_module.DEFAULT_READ_LIMIT = 500
 
 DAYTONA_AVAILABLE = True
 
@@ -93,7 +93,14 @@ def upload_directory_to_sandbox(
             if file_path.name.startswith(".") or file_path.name.endswith("~"):
                 continue
             # 跳过特定目录
-            skip_dirs = {"__pycache__", ".git", ".venv", "venv", "node_modules", ".pytest_cache"}
+            skip_dirs = {
+                "__pycache__",
+                ".git",
+                ".venv",
+                "venv",
+                "node_modules",
+                ".pytest_cache",
+            }
             if any(part in skip_dirs for part in file_path.parts):
                 continue
 

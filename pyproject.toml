@@ -25,4 +25,8 @@ dependencies = [
     "e2b-code-interpreter>=2.4.1",
     "daytona>=0.146.0",
     "watchdog>=3.0.0",
+    "arize-phoenix==12.29.0",
+    "openinference-instrumentation-langchain>=0.1.0",
+    "openinference-instrumentation-openai>=0.1.0",
+    "pytz>=2025.2",
 ]
