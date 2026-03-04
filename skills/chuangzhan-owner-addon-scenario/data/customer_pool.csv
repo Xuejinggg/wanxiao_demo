@@ -1,0 +1,4 @@
+customer_id,name,city,family_structure,income_band,auto_policy_expire_days,last_interaction_days
+C001,张三,深圳,已婚有孩,30-50万,21,3
+C002,李四,广州,已婚,20-30万,75,20
+C003,王五,佛山,单身,10-20万,160,45
